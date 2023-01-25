@@ -1,7 +1,7 @@
 from stalApi import stalApi
 import asyncio
 
-exemplar = stalApi(client_id = 30, client_secret = '0SmJSabjQrtShTfwVkNXADLdQiehMGRwyPxZmOYf')
+exemplar = stalApi(client_id = 0, client_secret = 'tokentokentoken')
 
 
 async def main():
