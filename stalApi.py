@@ -1,5 +1,6 @@
 import aiohttp
 
+
 class stalApi:
 
     def __init__(self, client_id, client_secret, url="https://eapi.stalcraft.net/"):
@@ -14,13 +15,14 @@ class stalApi:
     async def __request_get(self, endpoint, headers = None, apiUrl = None):
         apiUrl = apiUrl if apiUrl else self.__api_url
         url = apiUrl+endpoint
-        async with self.session.post(url, headers = headers) as resp:
+        print(url)
+        async with self.session.post(url, params = headers) as resp:
             r = await resp.json()
         return r
 
 
     async def get_regions(self):
-        endpoint = 'https://eapi.stalcraft.net/regions'
+        endpoint = 'regions'
         r = await self.__request_get(endpoint, self.authHeader)
         return r
 
